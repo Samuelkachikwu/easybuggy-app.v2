@@ -17,9 +17,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t easybuggy-app .'
+                sh 'docker build -t samuel456/easybuggy-app:v1.0.0 .'
             }
         }
 
+        stage('Push Docker Image') {
+    steps {
+        sh 'docker push samuel456/easybuggy-app:v1.0.0'
     }
 }
+
+    }
+} 
